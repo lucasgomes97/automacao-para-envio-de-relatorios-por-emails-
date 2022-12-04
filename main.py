@@ -4,8 +4,12 @@
 import pyautogui #automatiza seu mouse e teclado
 import time     #controla o tempo do código
 import pyperclip # habilita a opção de  copiar e colar com o python
+pyautogui.alert("Atenção!!! A automação vai iniciar, selecione a data do relatório e não meixa em nada até o código ""está finalizado.  "
+                " Precione ok para iniciar")
 pyautogui.press("win")  #aciona a tecla windows automaticamente
+pyautogui.sleep(1)
 pyautogui.write("google chrome") #realiza a pesquisa na barra do windows/ use seu browser de preferência
+pyautogui.press("backspace")
 pyautogui.press("enter")  #aperta/aciona a tecla enter
 pyautogui.sleep(1)        #adiciona um deley em segundos apartir do valor indicado
 link = "https://drive.google.com/drive/folders/1mhXZ3JPAnekXP_4vX7Z_sJj35VWqayaR"     # link do diretorio de onde fica seus dados
@@ -39,7 +43,7 @@ faturamento = tabela["Valor Final"].sum()       #calcular faturamento dentro da 
 qtdprodutos = tabela["Quantidade"].sum()        #calcular quantidade dentro da tabela
 # 5° entrar no meu email
 pyautogui.hotkey("ctrl", "t")
-link=  "https://mail.google.com"  #inbox  #link de seu email/gmail/hotmail/yahoo/etc
+link ="https://mail.google.com"  #inbox  #link de seu email/gmail/hotmail/yahoo/etc
 pyperclip.copy(link)    #copiar o link acima
 pyautogui.hotkey("ctrl", "v")     #comando para colar o link (ctrl v) usando pyautogui
 pyautogui.press("enter")    #aperta/aciona a tecla enter
@@ -49,7 +53,7 @@ pyautogui.click(x=98, y=252)
 pyautogui.sleep(2)
 pyautogui.click(x=1222, y=450)
 time.sleep(1.5)
-pyautogui.write("lucasceo22+códigosautomacao@gmail.com") #seu email/ o + é para indicar qual pasta o email irá ficar
+pyautogui.write("lucasceo22+cogigoautomacao@gmail.com")    #email/ o + é para indicar qual pasta o email irá ficar
 pyautogui.press("Tab")  #confirmar o email
 pyautogui.click(x=1294, y=496)
 time.sleep(1)
@@ -70,3 +74,4 @@ pyautogui.hotkey("ctrl", "v")
 # 8° enviar o email
 time.sleep(1)
 pyautogui.hotkey("ctrl", "enter") #atalho para enviar o email
+pyautogui.alert("Email enviado com sucesso")
